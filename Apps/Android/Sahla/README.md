@@ -1,5 +1,5 @@
 ## Ibnsina Pharma Customer (Android Application).
-Welcome to Ibnsina Pharma mobile application, your gate to ISP digital services
+Welcome to Sahla Android mobile application, your gate to ISP digital services
 The Application is designed to be user-friendly and compatible with different mobile interfaces. This product is part of a program created to serve our customers and deliver all our services through digital platforms. through this Application; you can create sales orders, monitor your transactions, and view the most recent governmental publications. you can reach these features from the web portal or the mobile application available in its Android version on the Google Play and its iOS version on the App Store.
 
 Products's Features:
@@ -187,7 +187,7 @@ Hilt provides a standard way to use DI in your application by providing containe
 - Start with declaring your application class :
 ```kotlin
 @HiltAndroidApp
-class MyApplication : Application() {}
+class MyApplication : Application() 
 ```
 - Then tell hilt how to instantiate your object :
 ```kotlin
