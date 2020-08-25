@@ -1,0 +1,144 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        applicationId "com.sahla.sahla"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            versionNameSuffix '-stable'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            versionNameSuffix '-test'
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
+    bundle { language { enableSplit = false } }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.core:core-ktx:1.3.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
+    implementation 'com.google.android.material:material:1.3.0-alpha02'
+    implementation 'androidx.appcompat:appcompat:1.3.0-alpha02'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.constraintlayout:constraintlayout:2.0.0"
+    implementation "androidx.preference:preference-ktx:1.1.1"
+    implementation "androidx.recyclerview:recyclerview:1.2.0-alpha05"
+
+    // Google permissions
+    implementation 'pub.devrel:easypermissions:3.0.0'
+    // Pin entry lib
+    implementation('com.alimuzaffar.lib:pinentryedittext:1.3.10') {
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
+    implementation "com.romandanylyk:pageindicatorview:1.0.3"
+
+    // Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    // Coroutines
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.7"
+
+    //  Activity KTX
+    implementation "androidx.activity:activity-ktx:1.1.0"
+
+    //  Fragment KTX
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
+
+    //  Lifecycle KTX
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+
+    //  ViewModel KTX
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0-alpha07'
+
+    //  LiveData KTX
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+
+    //  Navigation KTX
+    implementation "androidx.navigation:navigation-runtime-ktx:2.3.0"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.0"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.0"
+
+    // Paging
+    implementation "androidx.paging:paging-runtime-ktx:3.0.0-alpha05"
+    testImplementation "androidx.paging:paging-common:3.0.0-alpha05"
+
+    //  WorkManager KTX
+    implementation "androidx.work:work-runtime-ktx:2.4.0"
+
+    //  Room
+    implementation "androidx.room:room-runtime:2.3.0-alpha02"
+    implementation "androidx.room:room-ktx:2.3.0-alpha02"
+    kapt "androidx.room:room-compiler:2.3.0-alpha02"
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.squareup.okhttp3:okhttp:4.8.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.8.0"
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:2.28.3-alpha"
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02'
+    implementation 'androidx.hilt:hilt-work:1.0.0-alpha02'
+    kapt "com.google.dagger:hilt-android-compiler:2.28.3-alpha"
+    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
+
+    // Testing
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // For Robolectric tests.
+    testImplementation 'com.google.dagger:hilt-android-testing:2.28.3-alpha'
+    kaptTest 'com.google.dagger:hilt-android-compiler:2.28.3-alpha'
+
+    // For instrumented tests.
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.28.3-alpha'
+    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.28.3-alpha'
+
+}
