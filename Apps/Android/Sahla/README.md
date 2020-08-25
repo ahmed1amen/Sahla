@@ -1,15 +1,5 @@
-## Ibnsina Pharma Customer (Android Application).
-Welcome to Sahla Android mobile application, your gate to ISP digital services
-The Application is designed to be user-friendly and compatible with different mobile interfaces. This product is part of a program created to serve our customers and deliver all our services through digital platforms. through this Application; you can create sales orders, monitor your transactions, and view the most recent governmental publications. you can reach these features from the web portal or the mobile application available in its Android version on the Google Play and its iOS version on the App Store.
+## Salha (Android Application).
 
-Products's Features:
-
-Online Ordering: create new sales order and view the status of the previously requested orders.
-Promotion: view all the proposed promotions from Ibnsina and its suppliers
-Finance: track your invoices, statements and your balance status with Ibnsina.
-Publications : View, download and share all the governmental publications
-# Description
-this is the application used by pharmacists to make online orders, assign promotions ...etc
 # Installation
 - **[Koltin](https://kotlinlang.org/docs/tutorials/getting-started.html)** version 1.3.72 Programming Language with [koltin KTX](https://developer.android.com/kotlin/ktx) dependencies. 
 - The latest **Compile Sdk Version** 30.
